@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import { logout, selectUser } from '../feature/userSlice';
+import './Login.css';
+import './Create.css'
 
 const Create = () => {
   const [title, setTitle] = useState('')
@@ -19,7 +21,7 @@ const handleLogout = (e) =>{
   return (
    
     <div className="container-crud">
-           
+                
     <div className="header">
         <p>CodeLeap Network</p>
         <button onClick={(e)=> handleLogout(e)}>Logout</button>
@@ -44,7 +46,7 @@ const handleLogout = (e) =>{
                 onChange={(e) => setContent(e.target.value)}
             ></input>
         </div>
-        <button
+        <button className='btn-crud'
             disabled={!content}
         >Create</button>
     </form>

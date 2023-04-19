@@ -6,6 +6,7 @@
     background: #DDDDDD;
     text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
   }
 
   .login_form{
@@ -56,3 +57,5 @@
     background-color: #777777;
     cursor:not-allowed;
   }
+
+  
