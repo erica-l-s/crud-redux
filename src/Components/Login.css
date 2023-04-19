@@ -1,0 +1,58 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #DDDDDD;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height: 15rem;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 16px;
+  }
+
+  .login_form h3{
+    color: #000000;
+    margin-bottom: 50px ;
+    font-weight: 700;
+    font-size: 22px;
+  } 
+  
+  .login_form p{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px;
+  }
+  
+  .login_form input{
+    width: 20rem;
+    height: 2rem;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 5px;
+  }
+  
+  .login_form button{
+    width: 5rem;
+    height: 2rem;
+    background: #7695EC;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .login_form button:disabled{
+    background-color: #777777;
+    cursor:not-allowed;
+  }
