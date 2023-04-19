@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import { logout, selectUser } from '../feature/userSlice';
 
 const Create = () => {
-    const user = useSelector(selectUser);
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+  const user = useSelector(selectUser);
+
+const onInput = (e) => setTitle(e.target.value);
 
 const dispatch = useDispatch()
 const handleLogout = (e) =>{
@@ -13,10 +17,41 @@ const handleLogout = (e) =>{
   }
 
   return (
-    <div>
-        <h1>Welcome <span>{user.name}</span></h1>
+   
+    <div className="container-crud">
+           
+    <div className="header">
+        <p>CodeLeap Network</p>
         <button onClick={(e)=> handleLogout(e)}>Logout</button>
     </div>
+    <form className="box" >
+        <h2>What's on your mind?</h2>
+
+        <div>
+            <p>Title</p>
+            <input
+                value={title}
+                className="input-title"
+                onInput={onInput}
+                onChange={(e) => setTitle(e.target.value)}
+            ></input>
+        </div>
+        <div>
+            <p>Content</p>
+            <input
+                value={content}
+                className="input-content"
+                onChange={(e) => setContent(e.target.value)}
+            ></input>
+        </div>
+        <button
+            disabled={!content}
+        >Create</button>
+    </form>
+    <div>
+    
+    </div>
+ </div>
   )
 }
 
