@@ -41,7 +41,7 @@
     padding: 5px;
   }
   
-  .login_form button{
+  button{
     width: 5rem;
     height: 2rem;
     background: #7695EC;
@@ -52,7 +52,7 @@
     text-transform: uppercase;
     cursor: pointer;
   }
-  .login_form button:disabled{
+  button:disabled{
     background-color: #777777;
     cursor:not-allowed;
   }
