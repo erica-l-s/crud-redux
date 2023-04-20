@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import { logout, selectUser } from '../feature/userSlice';
+import {addPost} from '../feature/userSlice'
 import './Login.css';
 import './Create.css'
+import axios from 'axios';
 
 const Create = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const [username,setUsername] = useState(user)
+  
   const user = useSelector(selectUser);
+
 
 const onInput = (e) => setTitle(e.target.value);
 
@@ -18,6 +23,24 @@ const handleLogout = (e) =>{
  dispatch(logout());
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+        await axios.post("https://dev.codeleap.co.uk/careers/",
+            {
+                username,
+                title,
+                content
+            })
+        setUsername('')
+        setTitle('')
+        setContent('')
+       
+    } catch (err) {
+        console.error(err)
+    }
+}
+
   return (
    
     <div className="container-crud">
@@ -26,7 +49,7 @@ const handleLogout = (e) =>{
         <p>CodeLeap Network</p>
         <button onClick={(e)=> handleLogout(e)}>Logout</button>
     </div>
-    <form className="box" >
+    <form className="box" onSubmit={handleSubmit}>
         <h2>What's on your mind?</h2>
 
         <div>
@@ -48,6 +71,7 @@ const handleLogout = (e) =>{
         </div>
         <button className='btn-crud'
             disabled={!content}
+          
         >Create</button>
     </form>
     <div>

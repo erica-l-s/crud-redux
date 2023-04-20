@@ -13,12 +13,8 @@ export const userSlice = createSlice({
             state.user = null;
         },
 
-        addUser:(state,action) =>{
-           
-        }
+      
     }
-
-
 })
 
 export const { login, logout } = userSlice.actions
